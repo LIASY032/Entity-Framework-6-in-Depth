@@ -7,9 +7,9 @@
 ### Step 1
 Open Package Manager Console
 Import Entity Framework
- 
-    initial-package EntityFramework
-
+ ```bash
+initial-package EntityFramework
+```
 ### Step 2
 Make sure a class inherited from : DbContext
  DbSet represents a table
@@ -53,4 +53,14 @@ add-migration InitialModel
 update-database
 ```
 
+## Code First with Existing Database
 
+### Step 1
+Add New Item then choose ADO.NET Entity Data Model
+
+### Step 2 
+Choose Code First from database
+
+
+### Step 3
+Connect your server
