@@ -54,13 +54,17 @@ update-database
 ```
 
 ## Code First with Existing Database
+![77547673fbb467974bd9abc80188c1e](https://user-images.githubusercontent.com/66517361/145331241-d742b887-cd26-4894-bbf7-57ead2b32e5f.png)
 
 ### Step 1
 Add New Item then choose ADO.NET Entity Data Model
+![e7e50062389a907252cf6c750a9345f](https://user-images.githubusercontent.com/66517361/145331254-b0beff0f-7159-4e3e-9b74-781dec3a0fc7.png)
 
 ### Step 2 
 Choose Code First from database
+![2c5f5c1dc8c5b617b2cb6d6b4c83d72](https://user-images.githubusercontent.com/66517361/145331261-b54db497-7388-47ae-ab0e-ea7b197ea92d.png)
 
 
 ### Step 3
 Connect your server
+![1639021498(1)](https://user-images.githubusercontent.com/66517361/145331272-fa465232-d881-4cab-a727-9ad1965538cf.png)
