@@ -68,3 +68,10 @@ Choose Code First from database
 ### Step 3
 Connect your server
 ![1639021498(1)](https://user-images.githubusercontent.com/66517361/145331272-fa465232-d881-4cab-a727-9ad1965538cf.png)
+
+
+### Step 4
+
+enable-migrations
+
+same as step 4 above
