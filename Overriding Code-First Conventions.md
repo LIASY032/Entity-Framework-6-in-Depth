@@ -67,9 +67,55 @@ Foreign Keys
 ```c#
 public class Course
 {
+     [ForeignKey("AuthorId")]
     public int AuthorId {get; set;}
 
-    [ForeignKey("AuthorId")]
+   
     public Author Author {get; set;}
 }
+```
+
+
+
+## Fluent API
+```c#
+protected override void OnModelCreating(DbModelBuilder modelBuilder)
+{
+    // Apply configuration using Fluent API
+    
+    //Basics
+    modelBuilder.Entity<Course>()
+
+
+    //Table Names
+    modelBuilder.Entity<Course>().ToTable("tbl_Course");
+
+    //Primary Keys
+    modelBuilder.Entity<Book>().HasKey(t => t.ISBN);
+
+
+    // Composite Keys
+    modelBuilder.Entity<OrderItem>().HasKey(t => new {t.OrderId, t.OrderItemId});
+
+    //Column Names
+    modelBuilder.Entity<Course>().Property(t => t.Name).HasColumnName("sName");
+
+    //Column Types
+    modelBuilder.Entity<Course>().Property(t => t.Name).HasColumnType("varchar");
+
+    //Column Orders
+    modelBuilder.Entity<Course>().Property(t => t.Name).HasColumnOrder(2);
+
+    //Database Generated
+    modelBuilder.Entity<Book>().Property(t => t.ISBN).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+
+    //Nulls
+    modelBuilder.Entity<Course>().Property(t => t.Name).IsRequired();
+
+
+    //Length of Strings
+    modelBuilder.Entity<Course>().Property(t => t.Name).HasMaxLength(255);
+
+}
+
 ```
