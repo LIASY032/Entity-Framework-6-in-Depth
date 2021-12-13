@@ -116,6 +116,22 @@ protected override void OnModelCreating(DbModelBuilder modelBuilder)
     //Length of Strings
     modelBuilder.Entity<Course>().Property(t => t.Name).HasMaxLength(255);
 
+
+
+    //One-to-many Relationship 
+    Entity<Author>.HasMany(a => a.Courses).WithRequired(c => c.Author).HasForeignKey(c => c.AuthorId);    
+    
+    //Many-to-many Relationship
+    Entity<Course>.HasMany(c => c.Tags).WithMany(t => t.Courses).Map(m => 
+    {
+        m.ToTable(“CourseTag”);
+        m.MapLeftKey(“CourseId”);
+        m.MapRightKey(“TagId”);                            
+    });
+
+    //One-to-zero/one Relationship
+    Entity<Course>.HasRequired(c => c.Cover).WithRequiredPrincipal(c => c.Course);
+
 }
 
 ```
